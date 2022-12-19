@@ -13,6 +13,7 @@
   "author": "Victor Hugo Borges Simões",
   "license": "ISC",
   "devDependencies": {
-    "eslint": "^8.30.0"
+    "eslint": "^8.30.0",
+    "typescript": "^4.9.4"
   }
 }
