@@ -11,5 +11,8 @@
     "api"
   ],
   "author": "Victor Hugo Borges Simões",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.30.0"
+  }
 }
