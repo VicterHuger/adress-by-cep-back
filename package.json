@@ -1,0 +1,15 @@
+{
+  "name": "address-by-cep",
+  "version": "1.0.0",
+  "description": "An api to load the address of a CEP",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [
+    "cep",
+    "address",
+    "external",
+    "api"
+  ],
+  "author": "Victor Hugo Borges Simões",
+  "license": "ISC"
+}
