@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "An api to load the address of a CEP",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "dev": "nodemon src/server.ts"
+  },
   "keywords": [
     "cep",
     "address",
