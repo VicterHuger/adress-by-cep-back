@@ -4,6 +4,7 @@
   "description": "An api to load the address of a CEP",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
     "dev": "nodemon src/server.ts"
   },
   "keywords": [
