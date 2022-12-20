@@ -14,7 +14,7 @@
     "external",
     "api"
   ],
-  "author": "Victor Hugo Borges Simões",
+  "author": "Victor Hugo Borges Simões (github: https://github.com/VicterHuger)",
   "license": "ISC",
   "devDependencies": {
     "@types/cors": "^2.8.13",
