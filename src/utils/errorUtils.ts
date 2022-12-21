@@ -7,3 +7,11 @@ export function badRequestError(message: string = ""): ErrorApp {
   }
   return error;
 }
+
+export function notFoundError(message: string = ""): ErrorApp {
+  const error = {
+    code: "not_found",
+    message
+  }
+  return error;
+}
