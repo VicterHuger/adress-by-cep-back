@@ -41,4 +41,25 @@ describe('address service function()', () => {
 
   });
 
+  it('should return status 200 and the correct address if the zip code is correct', async () => {
+    const CEP = validCepGenerator();
+
+    jest.spyOn(addressService, 'getAddressByAPi').mockResolvedValueOnce({ status: 200, ok: true, code: `${CEP}`, state: "", city: "", district: "", address: "", statusText: "ok" });
+
+    const result = await addressService.getAddressByCep(CEP);
+
+    expect(addressService.getAddressByAPi).toBeCalledWith(CEP);
+    expect(result).toMatchObject(expect.objectContaining({
+      status: 200,
+      ok: true,
+      code: CEP,
+      state: expect.any(String),
+      city: expect.any(String),
+      district: expect.any(String),
+      address: expect.any(String),
+      statusText: expect.any(String)
+    }));
+
+  });
+
 })
