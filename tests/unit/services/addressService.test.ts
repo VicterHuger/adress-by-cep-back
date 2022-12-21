@@ -27,4 +27,18 @@ describe('address service function()', () => {
     expect(promise).rejects.toEqual(badRequestError('CEP length must be not bigger than 8 numbers'));
     expect(addressService.getAddressByAPi).not.toBeCalled();
   });
+
+  it('should return status 404 if the zip code is not valid', () => {
+    const CEP = notValidCepGenerator();
+
+    jest.spyOn(addressService, 'getAddressByAPi').mockImplementationOnce((): any => { });
+
+    const promise = addressService.getAddressByCep(CEP);
+
+    expect(promise).rejects.toEqual(notFoundError('CEP not found, it is not valid'));
+    expect(addressService.getAddressByAPi).toBeCalledWith(CEP);
+
+
+  });
+
 })
