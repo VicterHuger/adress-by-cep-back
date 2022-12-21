@@ -15,3 +15,11 @@ export function notFoundError(message: string = ""): ErrorApp {
   }
   return error;
 }
+
+export function internalServerError(message: string = ""): ErrorApp {
+  const error = {
+    code: "internal_server",
+    message
+  }
+  return error;
+}
