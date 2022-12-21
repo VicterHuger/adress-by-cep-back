@@ -19,4 +19,12 @@ describe('address service function()', () => {
     expect(addressService.getAddressByAPi).not.toBeCalled();
   });
 
+  it('should return status 400 if the zip code contains length bigger than 8 characteres', () => {
+    const CEP = hugeCepGenerator();
+
+    const promise = addressService.getAddressByCep(CEP);
+
+    expect(promise).rejects.toEqual(badRequestError('CEP length must be not bigger than 8 numbers'));
+    expect(addressService.getAddressByAPi).not.toBeCalled();
+  });
 })
