@@ -5,7 +5,7 @@ export function badRequestError(message: string = ""): ErrorApp {
     code: "bad_request",
     message
   }
-  return error;
+  throw (error);
 }
 
 export function notFoundError(message: string = ""): ErrorApp {
@@ -13,7 +13,7 @@ export function notFoundError(message: string = ""): ErrorApp {
     code: "not_found",
     message
   }
-  return error;
+  throw (error);
 }
 
 export function internalServerError(message: string = ""): ErrorApp {
@@ -21,5 +21,6 @@ export function internalServerError(message: string = ""): ErrorApp {
     code: "internal_server",
     message
   }
-  return error;
+  throw (error)
+}
 }
