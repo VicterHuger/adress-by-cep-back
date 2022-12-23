@@ -1,4 +1,4 @@
-import { ErrorApp } from "../types/errorType";
+import { ErrorApp } from "../types/errorTypes";
 
 export function badRequestError(message: string = ""): ErrorApp {
   const error = {
