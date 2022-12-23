@@ -15,7 +15,7 @@ describe('address service function()', () => {
 
     const promise = addressService.getAddressByCep(CEP);
 
-    expect(promise).rejects.toEqual(badRequestError('CEP must not contains non numerics characters'));
+    expect(promise).rejects.toEqual(badRequestError("CEP input must contains only numbers!"));
     expect(addressService.getAddressByAPi).not.toBeCalled();
   });
 
