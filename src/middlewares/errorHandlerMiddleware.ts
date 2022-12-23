@@ -5,7 +5,7 @@ import { ErrorApp, ErrorCustomized, ErrorStatus } from "../types/errorTypes";
 export async function errorHandlerMiddleware(err: ErrorCustomized | ErrorApp, _req: Request, res: Response, _next: NextFunction) {
   const errorStatus: ErrorStatus = {
     "bad_request": 400,
-    "not_found": 401,
+    "not_found": 404,
     "internal_server_error": 500
   };
 
