@@ -1,4 +1,5 @@
 async function getAddressByCep(cep: string) {
+  if (isNaN(Number(cep))) badRequestError("CEP input must contains only numbers!");
   const apiInfo = await getAddressByAPi(cep);
   return apiInfo;
 }
