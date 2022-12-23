@@ -6,7 +6,7 @@ export async function errorHandlerMiddleware(err: ErrorCustomized | ErrorApp, _r
   const errorStatus: ErrorStatus = {
     "bad_request": 400,
     "not_found": 404,
-    "internal_server_error": 500
+    "internal_server": 500
   };
 
   console.log(err);
