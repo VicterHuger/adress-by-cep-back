@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 
-import { ErrorApp, ErrorCustomized, ErrorStatus } from "../types/errorType";
+import { ErrorApp, ErrorCustomized, ErrorStatus } from "../types/errorTypes";
 
 export async function errorHandlerMiddleware(err: ErrorCustomized | ErrorApp, _req: Request, res: Response, _next: NextFunction) {
   const errorStatus: ErrorStatus = {
