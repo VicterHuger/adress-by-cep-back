@@ -10,6 +10,13 @@ async function getAddressByCep(cep: string) {
 async function getAddressByAPi(cep: string) {
   return { "status": 200, "ok": true, "code": "20785-355", "state": "RJ", "city": "Rio de Janeiro", "district": "Maria da Graça", "address": "Rua Domingos de Magalhães - de 534 ao fim - lado par", "statusText": "ok" }
 
+async function getAddressByAPi(cep: string): Promise<AddressAPICorrect | AddressAPIIncorrect> {
+  const response = await cepApi.get<AddressAPICorrect | AddressAPIIncorrect>('/cep.json', {
+    params: {
+      code: cep,
+    }
+  });
+  return response.data
 
 }
 
