@@ -24,7 +24,7 @@ describe('address service function()', () => {
 
     const promise = addressService.getAddressByCep(CEP);
 
-    expect(promise).rejects.toEqual(badRequestError('CEP length must be not bigger than 8 numbers'));
+    expect(promise).rejects.toEqual(badRequestError('CEP length must be not bigger than 8 numbers!'));
     expect(addressService.getAddressByAPi).not.toBeCalled();
   });
 
@@ -37,7 +37,6 @@ describe('address service function()', () => {
 
     expect(promise).rejects.toEqual(notFoundError('CEP não encontrado'));
     expect(addressService.getAddressByAPi).toBeCalledWith(CEP);
-
 
   });
 
@@ -62,4 +61,4 @@ describe('address service function()', () => {
 
   });
 
-})
+});
