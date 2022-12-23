@@ -35,7 +35,7 @@ describe('address service function()', () => {
 
     const promise = addressService.getAddressByCep(CEP);
 
-    expect(promise).rejects.toEqual(notFoundError('CEP not found, it is not valid'));
+    expect(promise).rejects.toEqual(notFoundError('CEP não encontrado'));
     expect(addressService.getAddressByAPi).toBeCalledWith(CEP);
 
 
