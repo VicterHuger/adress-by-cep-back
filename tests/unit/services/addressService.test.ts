@@ -10,7 +10,7 @@ beforeEach(async () => {
 });
 
 describe('address service function()', () => {
-  it('should return status 400 if the zip code contains non numeric characters', () => {
+  it('should return status 400 if the zip code contains non numeric characters', async () => {
     const CEP = nonNumericCepGenerator();
 
     const promise = addressService.getAddressByCep(CEP);
@@ -19,7 +19,7 @@ describe('address service function()', () => {
     expect(addressService.getAddressByAPi).not.toBeCalled();
   });
 
-  it('should return status 400 if the zip code contains length bigger than 8 characteres', () => {
+  it('should return status 400 if the zip code contains length bigger than 8 characteres', async () => {
     const CEP = hugeCepGenerator();
 
     const promise = addressService.getAddressByCep(CEP);
@@ -28,7 +28,7 @@ describe('address service function()', () => {
     expect(addressService.getAddressByAPi).not.toBeCalled();
   });
 
-  it('should return status 404 if the zip code is not valid', () => {
+  it('should return status 404 if the zip code is not valid', async () => {
     const CEP = notValidCepGenerator();
 
     jest.spyOn(addressService, 'getAddressByAPi').mockImplementationOnce((): any => { });
