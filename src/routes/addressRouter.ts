@@ -6,6 +6,6 @@ import { cepSchema } from "../schemas/cepSchema";
 
 const router: Router = Router();
 
-router.get('/', validateSchema<{ cep: string }>(cepSchema), adressesController.getAddressByCep);
+router.post('/', validateSchema<{ cep: string }>(cepSchema), adressesController.getAddressByCep);
 
 export default router;
