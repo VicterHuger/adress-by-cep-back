@@ -4,7 +4,8 @@ async function getAddressByCep(cep: string) {
   if (cep.length > 8) badRequestError("CEP length must be not bigger than 8 numbers!");
 
   const apiInfo = await getAddressByAPi(cep);
-  return apiInfo;
+  if (!apiInfo.ok) {
+    generateThrowErrorMessages(apiInfo.statusText, (apiInfo as AddressAPIIncorrect).message);
 }
 
 async function getAddressByAPi(cep: string) {
