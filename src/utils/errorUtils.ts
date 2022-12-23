@@ -23,4 +23,11 @@ export function internalServerError(message: string = ""): ErrorApp {
   }
   throw (error)
 }
+
+export function generateThrowErrorMessages(code: string, message: string = ""): ErrorApp {
+  const error = {
+    code,
+    message
+  }
+  throw (error)
 }
