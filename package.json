@@ -8,7 +8,7 @@
     "start": "node dist/src/server.js",
     "dev": "nodemon src/server.ts",
     "test:unit": "jest --coverage --no-cache --config jestUnit.config.js --testPathPattern=tests/unit",
-    "test:integration": "jest --coverage -i --no-cache --config jestIntegration.config.js  --testPathPattern=tests/integration"
+    "test:integration": "jest --no-cache --coverage --config jestIntegration.config.js  --testPathPattern=tests/integration"
   },
   "keywords": [
     "cep",
