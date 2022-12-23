@@ -1,5 +1,8 @@
 async function getAddressByCep(cep: string) {
   if (isNaN(Number(cep))) badRequestError("CEP input must contains only numbers!");
+
+  if (cep.length > 8) badRequestError("CEP length must be not bigger than 8 numbers!");
+
   const apiInfo = await getAddressByAPi(cep);
   return apiInfo;
 }
